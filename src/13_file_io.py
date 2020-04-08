@@ -12,8 +12,12 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # YOUR CODE HERE
 file1 = open("foo.txt", "r")
 contents = file1.read()
+file1.close()
 print(contents)
 # print(file1)
+
+with open("foo.txt") as f:
+    print(f.read())
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -25,6 +29,13 @@ file2 = open("bar.txt", "w")
 file2.write("line 1\n")
 file2.write("line 2\n")
 file2.write("line 3\n")
+file2.close()
+
+with open("bar.txt", "w") as f:
+    file2.write("line 1\n")
+    file2.write("line 2\n")
+    file2.write("line 3\n")
+
 
 name = input("Whats your name? ")
 file2.write(name)
