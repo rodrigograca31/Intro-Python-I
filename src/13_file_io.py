@@ -29,13 +29,14 @@ file2 = open("bar.txt", "w")
 file2.write("line 1\n")
 file2.write("line 2\n")
 file2.write("line 3\n")
-file2.close()
 
 with open("bar.txt", "w") as f:
-    file2.write("line 1\n")
-    file2.write("line 2\n")
-    file2.write("line 3\n")
+    f.write("line 1\n")
+    f.write("line 2\n")
+    f.write("line 3\n")
 
 
 name = input("Whats your name? ")
 file2.write(name)
+
+file2.close()
